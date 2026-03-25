@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - PS5 Menu</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Status Bar -->
+  <div class="status-bar">
+    <div class="status-left">
+      <div class="status-title">PORTFOLIO</div>
+      <div class="status-divider"></div>
+      <div class="status-subtitle">Home</div>
+    </div>
+    <div class="status-right">
+      <div class="status-user">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        <span>Player 1</span>
+      </div>
+      <div class="status-divider"></div>
+      <div class="status-icons">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+          <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+          <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+          <line x1="12" y1="20" x2="12.01" y2="20"></line>
+        </svg>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+        </svg>
+      </div>
+      <div class="status-divider"></div>
+      <div class="status-time">00:00</div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Dynamic Background -->
+    <div class="background-layer"></div>
+    <div class="blur-overlay"></div>
+    <div class="vignette"></div>
+
+    <!-- Navigation Hint -->
+    <div class="nav-hint">
+      <span class="hint-item">
+        <span class="hint-key">← →</span>
+        Navigate
+      </span>
+      <span class="hint-item">
+        <span class="hint-key">↓</span>
+        Details
+      </span>
+      <span class="hint-item">
+        <span class="hint-key">ENTER</span>
+        Select
+      </span>
+    </div>
+
+    <!-- Cards Container -->
+    <div class="cards-container">
+      <div id="cardsWrapper" class="cards-wrapper"></div>
+    </div>
+
+    <!-- Bottom Details Panel -->
+    <div id="detailsPanel" class="details-panel">
+      <div class="details-content">
+        <div class="details-left">
+          <div class="details-tags">
+            <div class="detail-tag" id="gameCode">LO1</div>
+            <div class="detail-hours">
+              <svg class="icon-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span id="gameHours">0 hours played</span>
+            </div>
+          </div>
+          <h3 class="details-title" id="gameTitle">Game Title</h3>
+          <p class="details-description" id="gameDescription">Description here</p>
+          
+          <div class="details-stats">
+            <div class="stat-item">
+              <svg class="icon-stat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                <path d="M4 22h16"></path>
+                <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+                <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+                <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+              </svg>
+              <div>
+                <div class="stat-value" id="gameAchievements">0</div>
+                <div class="stat-label">Achievements</div>
+              </div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="progress-container">
+              <div class="progress-header">
+                <svg class="icon-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+                <span>Progress</span>
+              </div>
+              <div class="progress-bar">
+                <div id="progressFill" class="progress-fill"></div>
+              </div>
+              <div class="progress-text" id="progressText">0% Complete</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="details-right">
+          <button id="playButton" class="play-button">
+            <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            Play
+          </button>
+          <button class="details-button">View Details</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page Indicators -->
+    <div id="indicators" class="indicators"></div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
