@@ -10,7 +10,7 @@ const games = [
     achievements: 12,
     hours: 24,
     icon: 'https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=200&h=200&fit=crop&crop=center',
-    gradient: 'linear-gradient(to bottom right, rgba(30, 58, 138, 0.4), rgba(67, 56, 202, 0.4), rgba(107, 33, 168, 0.4))'
+    gradient: 'linear-gradient(to bottom right, rgba(0, 36, 90, 0.5), rgba(0, 70, 145, 0.45), rgba(44, 118, 255, 0.48))'
   },
   {
     id: 'lo2',
@@ -22,7 +22,7 @@ const games = [
     achievements: 9,
     hours: 18,
     icon: 'https://images.unsplash.com/photo-1621259182978-fbf93132d53d?w=200&h=200&fit=crop&crop=center',
-    gradient: 'linear-gradient(to bottom right, rgba(107, 33, 168, 0.4), rgba(219, 39, 119, 0.4), rgba(220, 38, 38, 0.4))'
+    gradient: 'linear-gradient(to bottom right, rgba(0, 30, 80, 0.5), rgba(0, 70, 160, 0.5), rgba(0, 110, 215, 0.5))'
   },
   {
     id: 'lo3',
@@ -34,7 +34,7 @@ const games = [
     achievements: 15,
     hours: 32,
     icon: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=200&h=200&fit=crop&crop=center',
-    gradient: 'linear-gradient(to bottom right, rgba(6, 95, 70, 0.4), rgba(20, 184, 166, 0.4), rgba(6, 182, 212, 0.4))'
+    gradient: 'linear-gradient(to bottom right, rgba(0, 40, 100, 0.5), rgba(10, 100, 170, 0.5), rgba(6, 160, 216, 0.5))'
   },
   {
     id: 'lo4',
@@ -46,7 +46,7 @@ const games = [
     achievements: 8,
     hours: 15,
     icon: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=200&h=200&fit=crop&crop=center',
-    gradient: 'linear-gradient(to bottom right, rgba(194, 65, 12, 0.4), rgba(220, 38, 38, 0.4), rgba(219, 39, 119, 0.4))'
+    gradient: 'linear-gradient(to bottom right, rgba(0, 35, 90, 0.5), rgba(0, 75, 170, 0.5), rgba(0, 110, 230, 0.5))'
   },
   {
     id: 'lo5',
@@ -58,7 +58,7 @@ const games = [
     achievements: 11,
     hours: 28,
     icon: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=200&h=200&fit=crop&crop=center',
-    gradient: 'linear-gradient(to bottom right, rgba(67, 56, 202, 0.4), rgba(59, 130, 246, 0.4), rgba(6, 182, 212, 0.4))'
+    gradient: 'linear-gradient(to bottom right, rgba(0, 35, 95, 0.5), rgba(0, 78, 165, 0.5), rgba(6, 148, 220, 0.5))'
   },
   {
     id: 'projects',
@@ -70,7 +70,7 @@ const games = [
     achievements: 20,
     hours: 45,
     icon: 'https://images.unsplash.com/photo-1605902711834-8b11c3e3ef2f?w=200&h=200&fit=crop&crop=center',
-    gradient: 'linear-gradient(to bottom right, rgba(219, 39, 119, 0.4), rgba(236, 72, 153, 0.4), rgba(220, 38, 38, 0.4))'
+    gradient: 'linear-gradient(to bottom right, rgba(0, 40, 120, 0.5), rgba(0, 85, 190, 0.45), rgba(10, 140, 230, 0.5))'
   },
   {
     id: 'about',
@@ -82,7 +82,7 @@ const games = [
     achievements: 5,
     hours: 0,
     icon: 'https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=200&h=200&fit=crop&crop=center',
-    gradient: 'linear-gradient(to bottom right, rgba(6, 182, 212, 0.4), rgba(59, 130, 246, 0.4), rgba(67, 56, 202, 0.4))'
+    gradient: 'linear-gradient(to bottom right, rgba(0, 40, 120, 0.5), rgba(0, 80, 180, 0.4), rgba(0, 140, 225, 0.4))'
   },
   {
     id: 'personal',
@@ -94,7 +94,7 @@ const games = [
     achievements: 7,
     hours: 22,
     icon: 'https://images.unsplash.com/photo-1586182987320-4f376d39d787?w=200&h=200&fit=crop&crop=center',
-    gradient: 'linear-gradient(to bottom right, rgba(220, 38, 38, 0.4), rgba(234, 88, 12, 0.4), rgba(250, 204, 21, 0.4))'
+    gradient: 'linear-gradient(to bottom right, rgba(0, 38, 90, 0.5), rgba(0, 88, 170, 0.45), rgba(12, 144, 240, 0.5))'
   }
 ];
 

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LO4 - Professional Standard | Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body { background: #040812; color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; margin: 0; min-height: 100vh; }
+    .lo4-container { max-width: 1280px; margin: 0 auto; padding: 70px 36px 48px; }
+    .back-button { position: fixed; top: 20px; left: 20px; z-index: 20; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.22); color: #fff; border-radius: 999px; padding: 10px 16px; cursor: pointer; transition: background 0.25s ease; backdrop-filter: blur(8px); }
+    .back-button:hover { background: rgba(255,255,255,0.26); }
+    .lo4-header { text-align: center; margin-bottom: 50px; }
+    .lo4-title { font-size: 46px; font-weight: 700; margin-bottom: 10px; background: linear-gradient(135deg, #34d399, #10b981); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .lo4-subtitle { font-size: 24px; color: rgba(255,255,255,0.86); margin-bottom: 14px; }
+    .lo4-description { font-size: 17px; color: rgba(255,255,255,0.80); line-height: 1.62; max-width: 860px; margin: 0 auto; }
+    .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; margin-top: 34px; }
+    .info-card { border: 1px solid rgba(255,255,255,0.14); background: rgba(255,255,255,0.05); border-radius: 14px; padding: 22px; backdrop-filter: blur(14px); }
+    .info-card h3 { font-size: 21px; color: #fff; margin-bottom: 10px; }
+    .info-card p { color: rgba(255,255,255,0.77); line-height: 1.54; }
+    .process-section { margin-top: 46px; }
+    .process-section h2 { font-size: 30px; text-align: center; margin-bottom: 18px; color: #f3f5ff; }
+    .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .process-card { background: rgba(20, 28, 45, 0.84); border: 1px solid rgba(255,255,255,0.16); border-radius: 14px; padding: 20px; transition: transform 0.23s ease, border-color 0.23s ease; }
+    .process-card:hover { transform: translateY(-3px); border-color: rgba(255,255,255,0.24); }
+    .process-number { font-size: 16px; font-weight: 800; color: #7dd3fc; margin-bottom: 8px; }
+    .process-icon { font-size: 42px; margin-bottom: 10px; }
+    .process-title { font-size: 21px; font-weight: 700; margin-bottom: 8px; }
+    .process-description { color: rgba(255,255,255,0.75); line-height: 1.56; }
+    .process-detail { margin-top: 10px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 10px 12px; background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.78); display: none; }
+    .toggle-btn { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16); color: #fff; border-radius: 10px; padding: 8px 11px; font-size: 13px; cursor: pointer; }
+    .showcase-section { margin-top: 44px; }
+    .showcase-section h2 { text-align: center; color: #ecfdf5; margin-bottom: 18px; }
+    .showcase-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+    .showcase-card { background: rgba(12,18,29,0.8); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 18px; }
+    .showcase-card h4 { margin-bottom: 8px; color: #f4f8ff; font-size: 19px; }
+    .showcase-card p { color: rgba(255,255,255,0.73); line-height: 1.5; }
+    .badge { display: inline-block; margin-top: 10px; background: linear-gradient(135deg, #22c55e, #0f766e); color: #fff; border-radius: 10px; font-size: 11px; padding: 6px 10px; font-weight: 600; }
+    .footer { text-align: center; margin-top: 36px; padding: 16px 0 28px; color: rgba(255,255,255,0.7); font-size: 14px; }
+  </style>
+</head>
+<body>
+  <button class="back-button" onclick="window.location.href='index.html'">← Back to Portfolio</button>
+
+  <div class="lo4-container">
+    <header class="lo4-header">
+      <h1 class="lo4-title">LO4 - Professional Standard</h1>
+      <p class="lo4-subtitle">Professional methodology, stakeholder involvement and ethical responsibility</p>
+      <p class="lo4-description">
+        Both individually and in teams, you apply a relevant methodological approach from the professional field to set project goals, involve stakeholders, conduct applied research, give advice, decide, and deliver reports.
+        This includes logging ethical, intercultural and sustainability factors throughout the process.
+      </p>
+    </header>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>Methodological Approach</h3>
+        <p>Use established methodologies (e.g., Agile, SRD, human-centered design, research-based frameworks) to form project goals and plan execution to industry standards.</p>
+      </div>
+      <div class="info-card">
+        <h3>Stakeholder Involvement</h3>
+        <p>Engage stakeholders with clear communication, maintain feedback loops, and align decision-making with client expectations and project scope.</p>
+      </div>
+      <div class="info-card">
+        <h3>Ethical & Sustainable Practices</h3>
+        <p>Keep ethics, intercultural sensitivity, and sustainability visible in design choices, research, and final recommendations.</p>
+      </div>
+    </div>
+
+    <section class="process-section">
+      <h2>Key Professional Activities</h2>
+      <div class="process-grid">
+        <div class="process-card">
+          <div class="process-number">1</div>
+          <div class="process-icon">🧾</div>
+          <div class="process-title">Project Goal Definition</div>
+          <p class="process-description">Express measurable and realistic goals that reflect project purpose, user needs, and stakeholder priorities.</p>
+          <button class="toggle-btn" onclick="toggleDetails('goal-detail')">More</button>
+          <div id="goal-detail" class="process-detail">Example goal: Improve onboarding conversion by 25% in 3 months through iterative usability improvements and stakeholder alignment.</div>
+        </div>
+
+        <div class="process-card">
+          <div class="process-number">2</div>
+          <div class="process-icon">🤝</div>
+          <div class="process-title">Stakeholder Collaboration</div>
+          <p class="process-description">Document meetings, requirements and decisions with reports and tools like stakeholder maps, approval logs and communication plans.</p>
+          <button class="toggle-btn" onclick="toggleDetails('stakeholder-detail')">More</button>
+          <div id="stakeholder-detail" class="process-detail">Example: Weekly sprint reviews, process checkpoints, and stakeholder sign-offs for major scope changes and risk mitigation.</div>
+        </div>
+
+        <div class="process-card">
+          <div class="process-number">3</div>
+          <div class="process-icon">🔬</div>
+          <div class="process-title">Applied Research</div>
+          <p class="process-description">Conduct user studies, market surveys, feasibility scans, and technical research—reporting methods and findings clearly.</p>
+          <button class="toggle-btn" onclick="toggleDetails('research-detail')">More</button>
+          <div id="research-detail" class="process-detail">Example: Combine qualitative interviews with quantitative analytics to support recommendation decisions in a coherent presentation.</div>
+        </div>
+
+        <div class="process-card">
+          <div class="process-number">4</div>
+          <div class="process-icon">✅</div>
+          <div class="process-title">Decision & Reporting</div>
+          <p class="process-description">Provide advisories and decision documentation, including trade-offs, risk implications, and recommended next steps with traceable logic.</p>
+          <button class="toggle-btn" onclick="toggleDetails('decision-detail')">More</button>
+          <div id="decision-detail" class="process-detail">Example: Present 3 options, cost/benefit, and final target path with supporting justification for stakeholders.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="showcase-section">
+      <h2>Professional Standard Showcase</h2>
+      <div class="showcase-cards">
+        <div class="showcase-card">
+          <h4>Ethics & Sustainability Tracking</h4>
+          <p>Track ethical criteria (accessibility, bias, privacy) and sustainability metrics (energy use, material choice, long-term impact) in project logs.</p>
+          <span class="badge">Ethical Framework</span>
+        </div>
+        <div class="showcase-card">
+          <h4>Intercultural Engagement</h4>
+          <p>Include diverse audience perspectives in research and design evaluation to ensure culturally aware and inclusive product outcomes.</p>
+          <span class="badge">Inclusion</span>
+        </div>
+        <div class="showcase-card">
+          <h4>Final Delivery Pack</h4>
+          <p>Deliver a consolidated report including project background, outcomes, strategy, process, decisions, and future recommendations to stakeholders.</p>
+          <span class="badge">Report Quality</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">LO4: Professional Standards — methodology, stakeholders, applied research, professional decisions with ethics and sustainability.</div>
+  </div>
+
+  <script>
+    function toggleDetails(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.style.display = el.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>

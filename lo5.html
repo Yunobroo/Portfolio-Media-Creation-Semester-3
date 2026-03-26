@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LO5 - Personal Leadership | Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body { background: #010b0f; color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; margin: 0; min-height: 100vh; }
+    .lo5-container { max-width: 1260px; margin: 0 auto; padding: 72px 36px 50px; }
+    .back-button { position: fixed; top: 20px; left: 20px; z-index: 20; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.24); color: #fff; border-radius: 999px; padding: 10px 16px; cursor: pointer; transition: all 0.23s ease; backdrop-filter: blur(8px); }
+    .back-button:hover { background: rgba(255,255,255,0.26); }
+    .lo5-header { text-align: center; margin-bottom: 52px; }
+    .lo5-title { font-size: 46px; font-weight: 700; margin-bottom: 10px; background: linear-gradient(135deg, #f59e0b, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .lo5-subtitle { font-size: 24px; color: rgba(255,255,255,0.86); margin-bottom: 14px; }
+    .lo5-description { font-size: 17px; color: rgba(255,255,255,0.82); line-height: 1.62; max-width: 860px; margin: 0 auto; }
+    .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; margin-top: 34px; }
+    .info-card { border: 1px solid rgba(255,255,255,0.14); background: rgba(255,255,255,0.05); border-radius: 14px; padding: 22px; backdrop-filter: blur(12px); }
+    .info-card h3 { font-size: 21px; color: #fff; margin-bottom: 10px; }
+    .info-card p { color: rgba(255,255,255,0.77); line-height: 1.56; }
+    .process-section { margin-top: 48px; }
+    .process-section h2 { text-align: center; margin-bottom: 18px; color: #f8fafc; font-size: 30px; }
+    .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .process-card { background: rgba(20, 23, 33, 0.8); border: 1px solid rgba(255,255,255,0.14); border-radius: 14px; padding: 20px; transition: transform 0.23s ease, border-color 0.23s ease; }
+    .process-card:hover { transform: translateY(-3px); border-color: rgba(255,255,255,0.24); }
+    .process-number { font-size: 16px; font-weight: 800; color: #fbbf24; margin-bottom: 8px; }
+    .process-icon { font-size: 42px; margin-bottom: 10px; }
+    .process-title { font-size: 21px; font-weight: 700; margin-bottom: 10px; }
+    .process-description { color: rgba(255,255,255,0.75); line-height: 1.56; margin-bottom: 12px; }
+    .utt-detail { display: none; margin-top: 10px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.80); padding: 10px; font-size: 14px; }
+    .toggle-btn { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16); color: #fff; border-radius: 10px; padding: 8px 12px; font-size: 13px; cursor: pointer; }
+    .showcase-section { margin-top: 44px; }
+    .showcase-section h2 { text-align: center; margin-bottom: 18px; color: #f8faff; }
+    .showcase-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+    .showcase-card { background: rgba(12,18,29,0.85); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 18px; }
+    .showcase-card h4 { margin-bottom: 8px; color: #f8fafc; font-size: 19px; }
+    .showcase-card p { color: rgba(255,255,255,0.74); line-height: 1.5; }
+    .badge { display: inline-block; margin-top: 10px; background: linear-gradient(135deg, #f59e0b, #ef4444); color: #fff; border-radius: 10px; font-size: 11px; padding: 6px 10px; font-weight: 600; }
+    .footer { text-align: center; margin-top: 36px; padding: 16px 0 28px; color: rgba(255,255,255,0.68); font-size: 14px; }
+  </style>
+</head>
+<body>
+  <button class="back-button" onclick="window.location.href='index.html'">← Back to Portfolio</button>
+
+  <div class="lo5-container">
+    <header class="lo5-header">
+      <h1 class="lo5-title">LO5 - Personal Leadership</h1>
+      <p class="lo5-subtitle">Self-aware growth, values-driven actions, and learning attitude</p>
+      <p class="lo5-description">
+        You are aware of your strengths and weaknesses in ICT and personal development. You choose actions aligned with your core values to promote personal growth and a learning attitude.
+        The portfolio itself proves this and your other learning outcomes through your own authentic form and system (website, magazine, showreels, etc.).
+      </p>
+    </header>
+
+    <div class="info-grid">
+      <div class="info-card"><h3>Self-Awareness</h3><p>Reflect on ICT skills, tools, communication, and mindset; identify strengths and development areas honestly.</p></div>
+      <div class="info-card"><h3>Value-Based Actions</h3><p>Link decisions to values (e.g., curiosity, integrity, sustainability) and show how actions reflect them.</p></div>
+      <div class="info-card"><h3>Learning Attitude</h3><p>Document continuous learning: experiments, courses, feedback use, reflection notes, and improvement plans.</p></div>
+    </div>
+
+    <section class="process-section">
+      <h2>Personal Leadership Process</h2>
+      <div class="process-grid">
+        <div class="process-card">
+          <div class="process-number">1</div>
+          <div class="process-icon">🪞</div>
+          <div class="process-title">Strength & Weakness Log</div>
+          <p class="process-description">Maintain a self-assessment record with achievements and improvement goals.</p>
+          <button class="toggle-btn" onclick="toggleDetails('log-detail')">Show/Hide</button>
+          <div id="log-detail" class="utt-detail">Example: Strengths - problem solving, collaborative coding; Weaknesses - stakeholder presentation, frontend animation polish.</div>
+        </div>
+
+        <div class="process-card">
+          <div class="process-number">2</div>
+          <div class="process-icon">🎯</div>
+          <div class="process-title">Values-Driven Goals</div>
+          <p class="process-description">Set action plans based on personal values and track progress.</p>
+          <button class="toggle-btn" onclick="toggleDetails('values-detail')">Show/Hide</button>
+          <div id="values-detail" class="utt-detail">Example: Value=Quality, Action=build end-to-end test plan. Value=Learning, Action=weekly skill journal and peer review.</div>
+        </div>
+
+        <div class="process-card">
+          <div class="process-number">3</div>
+          <div class="process-icon">📚</div>
+          <div class="process-title">Portfolio proof setup</div>
+          <p class="process-description">Choose technical system that reflects your essence (custom website, magazine, showreel plus docs).</p>
+          <button class="toggle-btn" onclick="toggleDetails('portfolio-detail')">Show/Hide</button>
+          <div id="portfolio-detail" class="utt-detail">Example: This portfolio is an expressive website with dark-futuristic theme, using interactive case studies to show process transparency.</div>
+        </div>
+
+        <div class="process-card">
+          <div class="process-number">4</div>
+          <div class="process-icon">📈</div>
+          <div class="process-title">Learning journal & reflection</div>
+          <p class="process-description">Log feedback, iterations, challenges, and insights played back into development cycles.</p>
+          <button class="toggle-btn" onclick="toggleDetails('journal-detail')">Show/Hide</button>
+          <div id="journal-detail" class="utt-detail">Example: Reflect on sprint review: “Need stronger tests; invested 2h studying jest; next deliverable includes tests”.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="showcase-section">
+      <h2>Portfolio Proof Examples</h2>
+      <div class="showcase-cards">
+        <div class="showcase-card"><h4>Self-Designed Portfolio</h4><p>A bespoke website that presents personal brand values such as creativity, reliability, and growth.</p><span class="badge">Digital Artifact</span></div>
+        <div class="showcase-card"><h4>Reflective Documentation</h4><p>Weekly reflections on UX decisions, technical skill development, and communication improvements.</p><span class="badge">Archive</span></div>
+        <div class="showcase-card"><h4>Growth Recommendations</h4><p>Update plan with next 3 steps for skills and personal capacities based on assessment and feedback.</p><span class="badge">Actionable</span></div>
+      </div>
+    </section>
+
+    <div class="footer">LO5: Personal Leadership — authentic portfolio, value-aligned actions, and learning mindset.</div>
+  </div>
+
+  <script>
+    function toggleDetails(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.style.display = el.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
