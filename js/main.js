@@ -9,7 +9,7 @@ const games = [
     completion: 5,
     achievements: 12,
     hours: 24,
-    icon: '🎯',
+    icon: 'https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=200&h=200&fit=crop&crop=center',
     gradient: 'linear-gradient(to bottom right, rgba(30, 58, 138, 0.4), rgba(67, 56, 202, 0.4), rgba(107, 33, 168, 0.4))'
   },
   {
@@ -21,7 +21,7 @@ const games = [
     completion: 72,
     achievements: 9,
     hours: 18,
-    icon: '🚀',
+    icon: 'https://images.unsplash.com/photo-1621259182978-fbf93132d53d?w=200&h=200&fit=crop&crop=center',
     gradient: 'linear-gradient(to bottom right, rgba(107, 33, 168, 0.4), rgba(219, 39, 119, 0.4), rgba(220, 38, 38, 0.4))'
   },
   {
@@ -33,7 +33,7 @@ const games = [
     completion: 90,
     achievements: 15,
     hours: 32,
-    icon: '⚡',
+    icon: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=200&h=200&fit=crop&crop=center',
     gradient: 'linear-gradient(to bottom right, rgba(6, 95, 70, 0.4), rgba(20, 184, 166, 0.4), rgba(6, 182, 212, 0.4))'
   },
   {
@@ -45,7 +45,7 @@ const games = [
     completion: 65,
     achievements: 8,
     hours: 15,
-    icon: '🔥',
+    icon: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=200&h=200&fit=crop&crop=center',
     gradient: 'linear-gradient(to bottom right, rgba(194, 65, 12, 0.4), rgba(220, 38, 38, 0.4), rgba(219, 39, 119, 0.4))'
   },
   {
@@ -57,7 +57,7 @@ const games = [
     completion: 78,
     achievements: 11,
     hours: 28,
-    icon: '💎',
+    icon: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=200&h=200&fit=crop&crop=center',
     gradient: 'linear-gradient(to bottom right, rgba(67, 56, 202, 0.4), rgba(59, 130, 246, 0.4), rgba(6, 182, 212, 0.4))'
   },
   {
@@ -69,7 +69,7 @@ const games = [
     completion: 100,
     achievements: 20,
     hours: 45,
-    icon: '🎨',
+    icon: 'https://images.unsplash.com/photo-1605902711834-8b11c3e3ef2f?w=200&h=200&fit=crop&crop=center',
     gradient: 'linear-gradient(to bottom right, rgba(219, 39, 119, 0.4), rgba(236, 72, 153, 0.4), rgba(220, 38, 38, 0.4))'
   },
   {
@@ -81,7 +81,7 @@ const games = [
     completion: 100,
     achievements: 5,
     hours: 0,
-    icon: '👤',
+    icon: 'https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=200&h=200&fit=crop&crop=center',
     gradient: 'linear-gradient(to bottom right, rgba(6, 182, 212, 0.4), rgba(59, 130, 246, 0.4), rgba(67, 56, 202, 0.4))'
   },
   {
@@ -93,7 +93,7 @@ const games = [
     completion: 55,
     achievements: 7,
     hours: 22,
-    icon: '🎮',
+    icon: 'https://images.unsplash.com/photo-1586182987320-4f376d39d787?w=200&h=200&fit=crop&crop=center',
     gradient: 'linear-gradient(to bottom right, rgba(220, 38, 38, 0.4), rgba(234, 88, 12, 0.4), rgba(250, 204, 21, 0.4))'
   }
 ];
@@ -101,6 +101,15 @@ const games = [
 // State
 let selectedIndex = 0;
 let showDetails = false;
+let gamepadIndex = null;
+let prevGamepadButtons = [];
+let lastAxisMove = 0;
+let lastDpadMove = 0;
+
+// Config
+const AXIS_DEADZONE = 0.65; // reduce over-responsiveness
+const INPUT_COOLDOWN_MS = 150;
+const ACTION_BUTTONS = [0, 1, 2, 3]; // common A/Cross, B/Circle, X/Square, Y/Triangle
 
 // Initialize
 function init() {
@@ -109,10 +118,12 @@ function init() {
   updateDisplay();
   updateTime();
   setInterval(updateTime, 1000);
-  
-  document.addEventListener('keydown', handleKeyPress);
 
-  // ✅ CHANGED: Play button now loads page
+  document.addEventListener('keydown', handleKeyPress);
+  window.addEventListener('gamepadconnected', onGamepadConnected);
+  window.addEventListener('gamepaddisconnected', onGamepadDisconnected);
+  window.requestAnimationFrame(pollGamepad);
+
   document.getElementById('playButton').addEventListener('click', () => {
     const game = games[selectedIndex];
     if (game && game.id) {
@@ -146,7 +157,9 @@ function renderCards() {
       <div class="card-container">
         <div class="card-background" style="background: ${game.gradient}"></div>
         <div class="card-content">
-          <div class="card-icon">${game.icon}</div>
+          <div class="card-icon">
+            <img src="${game.icon}" alt="${game.title}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+          </div>
           <h2 class="card-title">${game.title}</h2>
           <p class="card-subtitle">${game.subtitle}</p>
         </div>
@@ -245,7 +258,7 @@ function updateDetailsPanel(game) {
 function toggleDetails(show) {
   showDetails = show;
   const panel = document.getElementById('detailsPanel');
-  panel.classList.toggle('show', showDetails);
+  panel.classList.toggle('expanded', showDetails);
 }
 
 // Handle keyboard
@@ -273,7 +286,6 @@ function handleKeyPress(e) {
       toggleDetails(false);
       break;
       
-    // ✅ CHANGED: Enter now loads page
     case 'Enter':
       e.preventDefault();
       const game = games[selectedIndex];
@@ -282,6 +294,100 @@ function handleKeyPress(e) {
       }
       break;
   }
+}
+
+function onGamepadConnected(event) {
+  gamepadIndex = event.gamepad.index;
+  console.log('Gamepad connected:', event.gamepad.id);
+}
+
+function onGamepadDisconnected() {
+  console.log('Gamepad disconnected');
+  gamepadIndex = null;
+  prevGamepadButtons = [];
+}
+
+function pollGamepad() {
+  // Auto-detect controller if connection event did not fire
+  if (gamepadIndex === null) {
+    const pads = navigator.getGamepads ? navigator.getGamepads() : [];
+    for (let i = 0; i < pads.length; i++) {
+      if (pads[i]) {
+        gamepadIndex = i;
+        console.log('Auto-detected gamepad index', i, pads[i].id);
+        break;
+      }
+    }
+  }
+
+  if (gamepadIndex === null) {
+    window.requestAnimationFrame(pollGamepad);
+    return;
+  }
+
+  const gamepad = navigator.getGamepads()[gamepadIndex];
+  if (gamepad) {
+    const b = gamepad.buttons;
+    const axes = gamepad.axes || [];
+    const pressed = (idx) => b[idx] && b[idx].pressed;
+
+    // D-pad or left-stick horizontal
+    const horiz = axes[0] || 0;
+    const now = Date.now();
+
+    const tryMoveLeft = () => {
+      if (now - lastAxisMove < INPUT_COOLDOWN_MS && now - lastDpadMove < INPUT_COOLDOWN_MS) return;
+      selectedIndex = (selectedIndex - 1 + games.length) % games.length;
+      updateDisplay();
+      lastAxisMove = now;
+      lastDpadMove = now;
+    };
+
+    const tryMoveRight = () => {
+      if (now - lastAxisMove < INPUT_COOLDOWN_MS && now - lastDpadMove < INPUT_COOLDOWN_MS) return;
+      selectedIndex = (selectedIndex + 1) % games.length;
+      updateDisplay();
+      lastAxisMove = now;
+      lastDpadMove = now;
+    };
+
+    if (pressed(14) && !prevGamepadButtons[14]) {
+      tryMoveLeft();
+    }
+    if (pressed(15) && !prevGamepadButtons[15]) {
+      tryMoveRight();
+    }
+
+    if (horiz < -AXIS_DEADZONE && !prevGamepadButtons.__leftAxis) {
+      tryMoveLeft();
+      prevGamepadButtons.__leftAxis = true;
+    } else if (horiz > AXIS_DEADZONE && !prevGamepadButtons.__rightAxis) {
+      tryMoveRight();
+      prevGamepadButtons.__rightAxis = true;
+    } else if (Math.abs(horiz) < AXIS_DEADZONE) {
+      prevGamepadButtons.__leftAxis = false;
+      prevGamepadButtons.__rightAxis = false;
+    }
+
+    if (pressed(13) && !prevGamepadButtons[13]) {
+      toggleDetails(true);
+    }
+    if (pressed(12) && !prevGamepadButtons[12]) {
+      toggleDetails(false);
+    }
+
+    const actionPressed = ACTION_BUTTONS.some(idx => pressed(idx) && !prevGamepadButtons[idx]);
+    if (actionPressed) {
+      const game = games[selectedIndex];
+      if (game && game.id) {
+        window.location.href = `${game.id}.html`;
+      }
+    }
+
+    prevGamepadButtons = b.map(btn => btn && btn.pressed);
+  }
+
+  window.requestAnimationFrame(pollGamepad);
 }
 
 // Start app
