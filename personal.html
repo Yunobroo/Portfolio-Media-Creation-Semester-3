@@ -14,46 +14,181 @@
     </div>
 
     <main class="page-content">
-      <div class="hero">
+      <section class="page-header">
         <p class="page-label">Personal Projects</p>
         <h1>Personal Projects</h1>
         <p class="page-description">
-          Self-initiated experiments in front-end development, UI animation, and interactive experiences built to sharpen skills.
+          A selection of independent work, experiments, and long-term ideas I develop in my own time.
+          Click a card to expand it.
         </p>
-      </div>
-
-      <section class="meta-grid">
-        <div class="meta-card">
-          <span class="meta-label">Hours Played</span>
-          <strong>147</strong>
-        </div>
-        <div class="meta-card">
-          <span class="meta-label">Completion</span>
-          <strong>91%</strong>
-        </div>
       </section>
 
-      <section class="gallery-section">
-        <h2>Project Gallery</h2>
-        <div class="gallery-grid">
-          <div class="gallery-card">UI Animation Concept</div>
-          <div class="gallery-card">Portfolio Experiment</div>
-          <div class="gallery-card">Creative Coding Build</div>
-          <div class="gallery-card">Interaction Prototype</div>
-        </div>
-      </section>
+      <section class="expandable-grid">
+        <article class="project-card expanded" data-card>
+          <button class="project-card-header" type="button" data-toggle>
+            <div class="project-card-title-wrap">
+              <p class="project-kicker">Featured Project</p>
+              <h2>Threadweaver</h2>
+              <p class="project-subtitle">Action RPG in development with two friends</p>
+            </div>
 
-      <section class="list-section">
-        <h2>Highlights</h2>
-        <ul>
-          <li>Built self-initiated design and coding experiments</li>
-          <li>Explored UI animation and interaction systems</li>
-          <li>Improved front-end skills through hands-on projects</li>
-        </ul>
+            <div class="project-meta-inline">
+              <span>Most active project</span>
+              <span class="expand-indicator">+</span>
+            </div>
+          </button>
+
+          <div class="project-card-body">
+            <div>
+              <div class="project-body-grid">
+                <div class="project-main-info">
+                  <p>
+                    Threadweaver is an action RPG I’m developing with two friends.
+                    It’s the project I spend most of my free time on, focusing on
+                    world-building, story, and overall direction.
+                  </p>
+
+                  <div class="tag-row">
+                    <span class="tag">Action RPG</span>
+                    <span class="tag">3-person team</span>
+                    <span class="tag">Worldbuilding</span>
+                    <span class="tag">Narrative</span>
+                  </div>
+                </div>
+
+                <div class="project-stats">
+                  <div class="stat-card">
+                    <span class="stat-label">Status</span>
+                    <strong>In Development</strong>
+                  </div>
+
+                  <div class="stat-card">
+                    <span class="stat-label">Focus</span>
+                    <strong>Story + Direction</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div class="content-sections">
+                <div class="content-block">
+                  <h3>Moodboards</h3>
+
+                  <div class="image-grid">
+                    <img class="lightbox-img" src="images/Moodboard Glass Desert.png" alt="Threadweaver moodboard 1">
+                    <img class="lightbox-img" src="images/Moodboard Starfall Plains.png" alt="Threadweaver moodboard 2">
+                    <img class="lightbox-img" src="images/Moodboard The Hourless City.png" alt="Threadweaver moodboard 3">
+                    <img class="lightbox-img" src="images/Moodboard The Soul Woodlands.png" alt="Threadweaver moodboard 4">
+                  </div>
+                </div>
+
+                <div class="content-block">
+                  <h3>Documents</h3>
+
+                  <div class="doc-list">
+                    <a href="docs/threadweaver/worldbuilding.pdf" target="_blank" class="doc-card">
+                      Worldbuilding Document
+                    </a>
+
+                    <a href="docs/threadweaver/gameplay.pdf" target="_blank" class="doc-card">
+                      Gameplay Systems
+                    </a>
+
+                    <a href="docs/threadweaver/story.pdf" target="_blank" class="doc-card">
+                      Story Outline
+                    </a>
+                  </div>
+                </div>
+
+                <div class="content-block">
+                  <h3>Story Concepts</h3>
+
+                  <div class="story-block">
+                    <h4>Core Idea</h4>
+                    <p>
+                      The world of Threadweaver revolves around interconnected timelines
+                      and manipulated realities, where actions ripple across multiple
+                      layers of existence.
+                    </p>
+                  </div>
+
+                  <div class="story-block">
+                    <h4>Theme</h4>
+                    <p>
+                      Themes focus on control versus freedom, identity, and the
+                      consequences of altering fate.
+                    </p>
+                  </div>
+
+                  <div class="story-block">
+                    <h4>Direction</h4>
+                    <p>
+                      The project is currently centered on shaping the world, defining
+                      story structure, and building a strong foundation for the game's
+                      tone and narrative.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card" data-card>
+          <button class="project-card-header" type="button" data-toggle>
+            <div class="project-card-title-wrap">
+              <p class="project-kicker">Other Work</p>
+              <h2>Misc Projects</h2>
+              <p class="project-subtitle">Smaller ideas, experiments, and side builds</p>
+            </div>
+
+            <div class="project-meta-inline">
+              <span>Side projects</span>
+              <span class="expand-indicator">+</span>
+            </div>
+          </button>
+
+          <div class="project-card-body">
+            <div>
+              <div class="content-sections">
+                <div class="content-block">
+                  <h3>Misc Projects</h3>
+
+                  <div class="inner-cards">
+                    <div class="inner-card">
+                      <h3>UI Experiments</h3>
+                      <p>
+                        Interface concepts where I test layout, motion, visual style,
+                        and interactive systems.
+                      </p>
+                    </div>
+
+                    <div class="inner-card">
+                      <h3>Web Builds</h3>
+                      <p>
+                        Smaller front-end projects that help me practice structure,
+                        styling, and interaction.
+                      </p>
+                    </div>
+
+                    <div class="inner-card">
+                      <h3>Concept Work</h3>
+                      <p>
+                        Early ideas and rough creative concepts that may grow into
+                        larger projects later on.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
       </section>
     </main>
   </div>
-
+<div id="lightbox" class="lightbox">
+  <img id="lightboxImage" src="" alt="">
+</div>
   <script src="js/page.js"></script>
 </body>
 </html>
