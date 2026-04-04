@@ -14,19 +14,58 @@
 
     <div class="carousel-wrapper">
       <div class="carousel" id="carousel">
-        <div class="item">Media Creation Projects</div>
-        <div class="item">School Projects</div>
-        <div class="item">Personal Projects</div>
-        <div class="item">About Me</div>
+        <div class="item active" data-link="media.html">
+          <div class="cover media-cover">
+            <span>Media Creation Projects</span>
+          </div>
+        </div>
+
+        <div class="item" data-link="school.html">
+          <div class="cover school-cover">
+            <span>School Projects</span>
+          </div>
+        </div>
+
+        <div class="item" data-link="personal.html">
+          <div class="cover personal-cover">
+            <span>Personal Projects</span>
+          </div>
+        </div>
+
+        <div class="item" data-link="about.html">
+          <div class="cover about-cover">
+            <span>About Me</span>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="achievements-panel" id="achievementsPanel">
-      <h2 id="achievementTitle">Achievements</h2>
-      <ul id="achievementList"></ul>
+    <div class="details-panel" id="detailsPanel">
+      <div class="details-header">
+        <div>
+          <p class="details-label">Now Viewing</p>
+          <h2 id="detailTitle">Media Creation Projects</h2>
+        </div>
+        <div class="hours-played" id="hoursPlayed">125 hours played</div>
+      </div>
+
+      <div class="progress-section">
+        <div class="progress-top">
+          <span>Completion</span>
+          <span id="progressPercent">82%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+
+      <div class="achievements-section">
+        <h3>Achievements</h3>
+        <ul id="achievementList"></ul>
+      </div>
     </div>
 
-    <div class="hint">← → move &nbsp;&nbsp; ↑ show achievements &nbsp;&nbsp; ↓ hide achievements</div>
+    <div class="hint">← → move &nbsp;&nbsp; ↑ details &nbsp;&nbsp; ↓ hide &nbsp;&nbsp; Enter open page</div>
   </div>
 
   <script src="js/main.js"></script>

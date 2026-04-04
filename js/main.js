@@ -2,105 +2,147 @@ const items = document.querySelectorAll('.item');
 const carousel = document.getElementById('carousel');
 const wrapper = document.querySelector('.carousel-wrapper');
 
-const achievementsPanel = document.getElementById('achievementsPanel');
-const achievementTitle = document.getElementById('achievementTitle');
+const detailsPanel = document.getElementById('detailsPanel');
+const detailTitle = document.getElementById('detailTitle');
+const hoursPlayed = document.getElementById('hoursPlayed');
+const progressPercent = document.getElementById('progressPercent');
+const progressFill = document.getElementById('progressFill');
 const achievementList = document.getElementById('achievementList');
 
 let selected = 0;
-let achievementsVisible = false;
+let detailsVisible = false;
 
-const achievementsData = [
+const sectionData = [
   {
     title: 'Media Creation Projects',
+    hours: 125,
+    progress: 82,
     achievements: [
-      'Produced short-form video edits for social platforms',
-      'Designed branded thumbnails and motion graphics',
-      'Built a consistent visual style across multiple projects'
+      'Edited branded short-form content for multiple formats',
+      'Built motion graphics and title sequences',
+      'Improved visual consistency across creative projects'
     ]
   },
   {
     title: 'School Projects',
+    hours: 94,
+    progress: 76,
     achievements: [
-      'Completed major coursework projects with strong results',
-      'Worked in teams to research, present, and prototype ideas',
-      'Applied design and technical skills in real assignments'
+      'Completed major coursework with strong presentation quality',
+      'Worked in teams to research and prototype ideas',
+      'Delivered polished assignments under deadlines'
     ]
   },
   {
     title: 'Personal Projects',
+    hours: 147,
+    progress: 91,
     achievements: [
-      'Created self-directed experiments to improve coding skills',
-      'Built small creative concepts from scratch',
-      'Explored UI design, interaction, and visual identity'
+      'Built self-initiated design and coding experiments',
+      'Explored UI animation and interaction systems',
+      'Improved front-end skills through hands-on projects'
     ]
   },
   {
     title: 'About Me',
+    hours: 999,
+    progress: 100,
     achievements: [
-      'Creative developer with interest in design and interaction',
-      'Comfortable learning fast and building ideas independently',
-      'Focused on clean visuals, usability, and presentation'
+      'Creative developer focused on UI and presentation',
+      'Learns fast and builds independently',
+      'Interested in design systems, motion, and clean interaction'
     ]
   }
 ];
 
-function renderAchievements() {
-  const current = achievementsData[selected];
-  achievementTitle.textContent = current.title + ' Achievements';
+function renderDetails() {
+  const current = sectionData[selected];
+
+  detailTitle.textContent = current.title;
+  hoursPlayed.textContent = `${current.hours} hours played`;
+  progressPercent.textContent = `${current.progress}%`;
+
   achievementList.innerHTML = '';
 
-  current.achievements.forEach((text) => {
+  current.achievements.forEach((achievement) => {
     const li = document.createElement('li');
-    li.textContent = text;
+    li.textContent = achievement;
     achievementList.appendChild(li);
+  });
+
+  progressFill.style.width = '0%';
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      progressFill.style.width = `${current.progress}%`;
+    });
   });
 }
 
-function showAchievements() {
-  renderAchievements();
-  achievementsPanel.classList.add('show');
-  achievementsVisible = true;
+function showDetails() {
+  renderDetails();
+  detailsPanel.classList.add('show');
+  detailsVisible = true;
 }
 
-function hideAchievements() {
-  achievementsPanel.classList.remove('show');
-  achievementsVisible = false;
+function hideDetails() {
+  detailsPanel.classList.remove('show');
+  detailsVisible = false;
 }
 
-function updateUI() {
+function updateCarousel() {
   items.forEach((item, index) => {
     item.classList.toggle('active', index === selected);
   });
 
-  const item = items[selected];
+  const currentItem = items[selected];
   const wrapperWidth = wrapper.offsetWidth;
-  const itemCenter = item.offsetLeft + item.offsetWidth / 2;
+  const itemCenter = currentItem.offsetLeft + currentItem.offsetWidth / 2;
   const offset = itemCenter - wrapperWidth / 2;
 
   carousel.style.transform = `translateX(${-offset}px)`;
 
-  if (achievementsVisible) {
-    renderAchievements();
+  if (detailsVisible) {
+    renderDetails();
   }
 }
+
+function openSelectedPage() {
+  const link = items[selected].dataset.link;
+  if (link) {
+    window.location.href = link;
+  }
+}
+
+items.forEach((item, index) => {
+  item.addEventListener('click', () => {
+    selected = index;
+    updateCarousel();
+    openSelectedPage();
+  });
+});
 
 window.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowRight') {
     selected = (selected + 1) % items.length;
-    updateUI();
+    updateCarousel();
   }
 
   if (e.key === 'ArrowLeft') {
     selected = (selected - 1 + items.length) % items.length;
-    updateUI();
+    updateCarousel();
   }
 
   if (e.key === 'ArrowUp') {
-    showAchievements();
+    showDetails();
   }
 
   if (e.key === 'ArrowDown') {
-    hideAchievements();
+    hideDetails();
+  }
+
+  if (e.key === 'Enter') {
+    openSelectedPage();
   }
 });
 
@@ -117,5 +159,5 @@ function updateTime() {
 setInterval(updateTime, 1000);
 updateTime();
 
-window.addEventListener('load', updateUI);
-window.addEventListener('resize', updateUI);
+window.addEventListener('load', updateCarousel);
+window.addEventListener('resize', updateCarousel);
