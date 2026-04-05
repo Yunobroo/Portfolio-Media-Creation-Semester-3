@@ -56,6 +56,58 @@ function setupLightbox() {
       lightbox.classList.remove('show');
     }
   });
+}
+
+function setupPDFLightbox() {
+  const pdfLinks = document.querySelectorAll('.pdf-link');
+  
+  pdfLinks.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const pdfUrl = link.getAttribute('href');
+      openPDFLightbox(pdfUrl);
+    });
+  });
+}
+
+function openPDFLightbox(pdfUrl) {
+  // Check if lightbox container exists, if not create it
+  let pdfLightbox = document.getElementById('pdfLightbox');
+  
+  if (!pdfLightbox) {
+    pdfLightbox = document.createElement('div');
+    pdfLightbox.id = 'pdfLightbox';
+    pdfLightbox.className = 'pdf-lightbox';
+    pdfLightbox.innerHTML = `
+      <div class="pdf-lightbox-content">
+        <button class="pdf-lightbox-close">&times;</button>
+        <iframe id="pdfFrame" src="" type="application/pdf"></iframe>
+      </div>
+    `;
+    document.body.appendChild(pdfLightbox);
+    
+    // Close on background click
+    pdfLightbox.addEventListener('click', (e) => {
+      if (e.target === pdfLightbox) {
+        pdfLightbox.classList.remove('show');
+      }
+    });
+    
+    // Close button
+    pdfLightbox.querySelector('.pdf-lightbox-close').addEventListener('click', () => {
+      pdfLightbox.classList.remove('show');
+    });
+    
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && pdfLightbox.classList.contains('show')) {
+        pdfLightbox.classList.remove('show');
+      }
+    });
+  }
+  
+  document.getElementById('pdfFrame').src = pdfUrl;
+  pdfLightbox.classList.add('show');
 } 
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' || e.key === 'Backspace') {
@@ -67,3 +119,4 @@ setInterval(updateTime, 1000);
 updateTime();
 setupExpandableCards();
 setupLightbox();
+setupPDFLightbox();
